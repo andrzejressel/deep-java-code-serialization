@@ -23,12 +23,12 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build and test base
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.3.1
       with:
         arguments: check
         build-root-directory: base
     - name: Build and test aws
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.3.1
       with:
         arguments: check
         build-root-directory: aws/library
@@ -42,7 +42,7 @@ jobs:
         AWS_REGION: eu-central-1
         AWS_DEFAULT_REGION: eu-central-1
     - name: Deploy base
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.3.1
       with:
         arguments: publishAllPublicationsToMavenCentral
         build-root-directory: base
@@ -52,7 +52,7 @@ jobs:
         ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_KEY }}
         ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}
     - name: Deploy AWS
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.3.1
       with:
         arguments: publishAllPublicationsToMavenCentral
         build-root-directory: aws/library    
