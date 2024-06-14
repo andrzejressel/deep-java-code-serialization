@@ -30,22 +30,22 @@ jobs:
       with:
         minimum-size: 6GB
     - name: Build plugin
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.4.0
       with:
         arguments: check --scan
         build-root-directory: plugin
     - name: Build base
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.4.0
       with:
         arguments: check --scan
         build-root-directory: base
     - name: Build aws/library
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.4.0
       with:
         arguments: check --scan
         build-root-directory: aws/library
     - name: Build aws/integration-test
-      uses: gradle/gradle-build-action@v3.1.0
+      uses: gradle/gradle-build-action@v3.4.0
       with:
         arguments: check --scan
         build-root-directory: aws/integration-test
